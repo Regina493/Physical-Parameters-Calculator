@@ -21,4 +21,4 @@ This application is a C++ based console utility designed for the calculation and
 * *Error Handling:* Implemented via conditional logic (if-else structures) and iterative loops to ensure robust user interaction and data re-entry.
 
 ---
-This project was developed for educational purposes to demonstrate the application of logical operators and data validation techniques in C++.
+This project was developed for educational purposes to demonstrate the application of logical operators and data validation techniques in C++.  1
