@@ -1,25 +1,24 @@
-# 🌌 Physical Parameters Calculator (BMI Edition)
+# Physical Parameters Calculator (BMI Edition)
 
-Простое и надежное консольное приложение на *C++* для расчета и анализа физических показателей здоровья.
+## Abstract
+This application is a C++ based console utility designed for the calculation and automated analysis of human physical health indicators, specifically the Body Mass Index (BMI).
 
-## ✨ Основные возможности
-*   *Расчет ИМТ:* Программа вычисляет Индекс Массы Тела на основе веса, роста и возраста.
-*   *Интеллектуальный анализ:* Выдает вердикт (нормальный вес, дефицит или избыток) согласно медицинским нормам.
-*   *Защита от «обмана» (Валидация):* 
-    *   Скрипт проверяет адекватность введенных данных.
-    *   Если ввести нереальный рост (например, меньше 50 см или больше 250 см) или буквы вместо цифр — программа выдаст ошибку.
-*   *Точность:* Использование типа double для максимально корректных расчетов.
+## Core Functionalities
+* *BMI Calculation:* The algorithm computes the Body Mass Index based on user-provided metrics: weight (kg), height (m), and age.
+* *Automated Data Analysis:* The system performs a comparative analysis of the results against established medical standards to provide a clinical interpretation (Underweight, Normal, or Overweight).
+* *Data Validation Protocols:* Implementation of input verification to ensure data integrity. The system flags physiological anomalies (e.g., height values outside the 50–250 cm range) and non-numeric input errors.
+* *Numerical Precision:* Utilization of the double data type ensures high-precision floating-point calculations for scientific accuracy.
 
-## 🛠 Как пользоваться
-1. Введите свой рост (в метрах, через точку, например *1.75*).
-2. Введите свой *вес* (в килограммах).
-3. Укажите свой *возраст*.
-4. Получите мгновенный результат и персональную рекомендацию!
+## Operational Instructions
+1. *Stature Input:* Enter height in meters using a decimal point (e.g., 1.75).
+2. *Mass Input:* Enter body weight in kilograms.
+3. *Age Specification:* Provide the chronological age of the subject.
+4. *Output Generation:* Review the calculated index and the subsequent personalized physiological recommendation.
 
-## 🚀 Техническая часть
-*   *Язык:* C++
-*   *Инструменты:* Стандартная библиотека ввода-вывода <iostream>.
-*   *Обработка ошибок:* Реализована через проверку условий if-else и циклы для повторного ввода.
+## Technical Specifications
+* *Programming Language:* C++
+* *Standard Libraries:* <iostream> (Standard Input/Output Streams Library)
+* *Error Handling:* Implemented via conditional logic (if-else structures) and iterative loops to ensure robust user interaction and data re-entry.
 
 ---
-Проект создан в учебных целях для демонстрации работы с логическими операторами в C++.
+This project was developed for educational purposes to demonstrate the application of logical operators and data validation techniques in C++.
