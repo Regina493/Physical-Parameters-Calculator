@@ -1,3 +1,4 @@
+
 # Physical Parameters Calculator (BMI Edition)
 
 ## Abstract
@@ -6,7 +7,7 @@ This application is a C++ based console utility designed for the calculation and
 ## Core Functionalities
 * *BMI Calculation:* The algorithm computes the Body Mass Index based on user-provided metrics: weight (kg), height (m), and age.
 * *Automated Data Analysis:* The system performs a comparative analysis of the results against established medical standards to provide a clinical interpretation (Underweight, Normal, or Overweight).
-* *Data Validation Protocols:* Implementation of input verification to ensure data integrity. The system flags physiological anomalies (e.g., height values outside the 50–250 cm range) and non-numeric input errors.
+* *Data Validation Protocols:* Implementation of input verification to ensure data integrity. The system flags physiological anomalies (e.g., height values outside the 50вЂ“250 cm range) and non-numeric input errors.
 * *Numerical Precision:* Utilization of the double data type ensures high-precision floating-point calculations for scientific accuracy.
 
 ## Operational Instructions
