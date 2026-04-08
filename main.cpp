@@ -5,9 +5,9 @@
 #include <windows.h>
 
 void setupConsole() {
-    // Установка кодировки для вывода кириллицы
-    SetConsoleOutputCP(1251);
-    SetConsoleCP(1251);
+    // Установка кодировки UTF-8 для корректного вывода в VS Code
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
 }
 
 double getDoubleInput(std::string prompt) {
@@ -60,5 +60,4 @@ int main() {
 
     return 0;
 }
-    
-    
+        
