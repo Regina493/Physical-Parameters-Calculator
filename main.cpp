@@ -1,60 +1,64 @@
 #include <iostream>
 #include <string>
-#include <Windows.h>
+#include <limits>
 #include <iomanip>
-#include <limits> // Библиотека для очистки буфера
+#include <windows.h>
 
 void setupConsole() {
-    SetConsoleCP(1251);
+    // РЈСЃС‚Р°РЅРѕРІРєР° РєРѕРґРёСЂРѕРІРєРё РґР»СЏ РІС‹РІРѕРґР° РєРёСЂРёР»Р»РёС†С‹
     SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
 }
 
-// Новая функция для безопасного ввода чисел
 double getDoubleInput(std::string prompt) {
     double value;
     while (true) {
         std::cout << prompt;
         if (std::cin >> value && value > 0) {
-            return value; // Ввод корректен
+            return value;
         } else {
-            std::cout << "Ошибка! Пожалуйста, введите положительное число (используйте точку для дробей)." << std::endl;
-            std::cin.clear(); // Сброс состояния ошибки cin
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера от "мусора"
+            std::cout << "РћС€РёР±РєР°! Р’РІРµРґРёС‚Рµ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }
 }
 
 void printRecommendation(double bmi, double height, double weight) {
     double idealWeight = 22.0 * (height * height);
-    std::cout << "\n--- ОТЧЕТ ---" << std::endl;
-    std::cout << "Ваш ИМТ: " << std::fixed << std::setprecision(2) << bmi << std::endl;
-    std::cout << "Идеальный вес для вашего роста: " << idealWeight << " кг" << std::endl;
+    std::cout << "\n--- РћРўР§Р•Рў ---" << std::endl;
+    std::cout << "Р’Р°С€ РРњРў: " << std::fixed << std::setprecision(2) << bmi << std::endl;
+    std::cout << "РРґРµР°Р»СЊРЅС‹Р№ РІРµСЃ РґР»СЏ РІР°С€РµРіРѕ СЂРѕСЃС‚Р°: " << idealWeight << " РєРі" << std::endl;
 
     if (bmi < 18.5) {
-        std::cout << "Заключение: Дефицит массы. Нужно набрать: " << idealWeight - weight << " кг." << std::endl;
-    } else if (bmi < 25) {
-        std::cout << "Заключение: Норма. Вы в отличной форме!" << std::endl;
+        std::cout << "Р—Р°РєР»СЋС‡РµРЅРёРµ: Р”РµС„РёС†РёС‚ РјР°СЃСЃС‹. РќСѓР¶РЅРѕ РЅР°Р±СЂР°С‚СЊ: " << (idealWeight - weight) << " РєРі" << std::endl;
+    } else if (bmi <= 25) {
+        std::cout << "Р—Р°РєР»СЋС‡РµРЅРёРµ: РќРѕСЂРјР°. Р’С‹ РІ РѕС‚Р»РёС‡РЅРѕР№ С„РѕСЂРјРµ!" << std::endl;
     } else {
-        std::cout << "Заключение: Избыточный вес. Нужно сбросить: " << weight - idealWeight << " кг." << std::endl;
+        std::cout << "Р—Р°РєР»СЋС‡РµРЅРёРµ: РР·Р±С‹С‚РѕС‡РЅС‹Р№ РІРµСЃ. РќСѓР¶РЅРѕ СЃР±СЂРѕСЃРёС‚СЊ: " << (weight - idealWeight) << " РєРі" << std::endl;
     }
 }
 
 int main() {
     setupConsole();
-    
+    std::string name;
+
     while (true) {
-        std::string name;
-        std::cout << "\nВведите имя (или 'exit' для выхода): ";
+        std::cout << "\nР’РІРµРґРёС‚Рµ РёРјСЏ (РёР»Рё 'РІС‹С…РѕРґ' РґР»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ): ";
         std::cin >> name;
-        if (name == "exit" || name == "выход") break;
 
-        // Используем нашу безопасную функцию вместо обычного cin
-        double h = getDoubleInput("Введите рост в метрах (например, 1.75): ");
-        double w = getDoubleInput("Введите вес в кг: ");
+        if (name == "РІС‹С…РѕРґ" || name == "exit") {
+            break;
+        }
 
-        double bmi = w / (h * h);
-        printRecommendation(bmi, h, w);
+        double weight = getDoubleInput("Р’РІРµРґРёС‚Рµ РІРµСЃ (РєРі): ");
+        double height = getDoubleInput("Р’РІРµРґРёС‚Рµ СЂРѕСЃС‚ (РІ РјРµС‚СЂР°С…, РЅР°РїСЂРёРјРµСЂ 1.75): ");
+
+        double bmi = weight / (height * height);
+        printRecommendation(bmi, height, weight);
     }
 
     return 0;
 }
+    
+    
