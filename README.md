@@ -34,9 +34,10 @@ This project serves as a demonstration of clean C++ programming, focusing on com
 1. Download the main.cpp source file.
 2. Compile the source code using a C++ compiler:
    g++ main.cpp -o BMI_Calculator
-3. Run the generated executable:
-   * On Windows: BMI_Calculator.exe
-   * On Linux/macOS: ./BMI_Calculator
+3. Run the application:
+   ```bash
+   ./BMI_Calculator
+
 
 ### Technical Implementation Details
 * Input Validation: The application includes logic to identify and flag unrealistic physiological inputs, ensuring the reliability of the output and preventing software errors from incorrect data.
