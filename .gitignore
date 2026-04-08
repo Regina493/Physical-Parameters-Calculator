@@ -39,4 +39,8 @@
 
 # debug information files
 *.dwo
+<<<<<<< HEAD
 .vscode/
+=======
+.vscode/
+>>>>>>> 4367ab2507bec3093cf6034403ccb5acc1c2c733
